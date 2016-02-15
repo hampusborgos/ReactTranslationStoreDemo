@@ -2,6 +2,9 @@
 .DS_Store
 Thumbs.db
 
+# Build result
+dist/
+
 # Logs
 logs
 *.log

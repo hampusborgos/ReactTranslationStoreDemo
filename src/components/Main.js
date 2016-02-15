@@ -14,11 +14,15 @@ class AppComponent extends React.Component {
   }
 
   componentDidMount() {
-    // Update when a language is loaded
-    TranslationStore.addChangeListener(() => this.forceUpdate());
-
     // Trigger loading of the language file
-    TranslationActionCreator.changeLanguage(Constants.DEFAULT_LANGUAGE);
+    TranslationActionCreator.changeLanguage(Constants.DEFAULT_LANGUAGE, success => {
+      if (success) {
+        this.forceUpdate();
+      }
+      else {
+        throw "No translation available!"
+      }
+    });
   }
 
   render() {

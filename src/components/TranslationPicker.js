@@ -56,7 +56,7 @@ class TranslationPicker extends React.Component {
   }
 }
 
-TranslationPicker.defaultProps = {
+TranslationPicker.propTypes = {
 };
 
 export default TranslationPicker;

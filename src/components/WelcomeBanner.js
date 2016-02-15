@@ -3,7 +3,7 @@ require('styles/App.scss');
 import React from 'react';
 import TranslatedComponent from '../utils/TranslatedComponent.js';
 
-class TranslationPicker extends React.Component {
+class WelcomeBanner extends React.Component {
 
   componentDidMount() {
     // Will execute as normal
@@ -19,11 +19,11 @@ class TranslationPicker extends React.Component {
   }
 }
 
-TranslationPicker.defaultProps = {
+WelcomeBanner.propTypes = {
   who: React.PropTypes.string.isRequired,
 };
 
 
 // Returns nothing because it mutates the class
-TranslatedComponent(TranslationPicker);
-export default TranslationPicker;
+TranslatedComponent(WelcomeBanner);
+export default WelcomeBanner;

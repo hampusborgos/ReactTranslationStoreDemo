@@ -4,7 +4,7 @@ import Constants from '../Constants';
 import TranslationStore from '../stores/TranslationStore';
 
 var TranslationActionCreator = {
-  changeLanguage(newLanguageCode) {
+  changeLanguage(newLanguageCode, callback) {
     if (!TranslationStore.getLanguage(newLanguageCode)) {
       throw 'Invalid language "' + newLanguageCode + '"';
     }
@@ -24,10 +24,13 @@ var TranslationActionCreator = {
             language: newLanguageCode,
             data: languageData,
           });
+
+          // Might be prettier to return a promise
+          callback(true);
         }
         else {
           // Failure, you might want to put your app in a global failure state here
-          throw 'Could not load language: ' + newLanguageCode;
+          callback(false);
         }
       }
     };
