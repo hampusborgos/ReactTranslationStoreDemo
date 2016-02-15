@@ -14,7 +14,7 @@
     "node": true
   },
   "rules": {
-    "comma-dangle": 1,
+    "comma-dangle": [1, "always-multiline"],
     "quotes": [ 1, "single" ],
     "no-undef": 1,
     "global-strict": 0,

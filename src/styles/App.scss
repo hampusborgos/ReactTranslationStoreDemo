@@ -1,0 +1,69 @@
+/* Base Application Styles */
+body {
+  background: #222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-wrapper {
+  margin: 50px auto;
+  max-width: 400px;
+  width: 100%;
+  height: 300px;
+  background-color: #eee;
+  color: #222;
+  padding: 1em;
+}
+
+.demo {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .input-group {
+    margin-bottom: 1em;
+  }
+}
+
+.input-group {
+  label {
+    span {
+      display: inline-block;
+      width: 40%;
+    }
+  }
+
+  input {
+    color: #222;
+    width: 60%;
+  }
+
+  &.focused {
+    label span {
+      font-weight: bold;
+    }
+  }
+}
+
+.language-picker {
+  display: flex;
+  margin: -1em -1em 0 -1em;
+
+  .btn {
+    flex-grow: 1;
+  }
+}
+
+.btn {
+  background-color: #2980b9;
+  border: none;
+  border-bottom: 1px solid #2c3e50;
+  padding: 0.4em;
+
+  + .btn {
+    border-left: 1px solid #2c3e50;
+  }
+}
